@@ -32,6 +32,9 @@ ALLOWED_HOSTS = ['shopwithayo-ecommerce.herokuapp.com', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    # to reconfigure handling of static files for whitenoise
+    'whitenoise.runserver_nostatic',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
 
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
