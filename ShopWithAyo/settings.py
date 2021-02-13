@@ -26,7 +26,7 @@ SECRET_KEY = '57^f+2@516ky3oyn6+jzd*x&gx=mtkh*^om^9%&-p%5^_qzb3^'
 DEBUG = False
 
 # ALLOWED_HOSTS = ['DJANGO-ENV-2.eba-p4rmgsac.us-west-2.elasticbeanstalk.com']
-ALLOWED_HOSTS = ['https://shopwithayo-ecommerce.herokuapp.com/', '127.0.0.1']
+ALLOWED_HOSTS = ['shopwithayo-ecommerce.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
