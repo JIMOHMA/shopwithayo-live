@@ -1,0 +1,24 @@
+{% extends 'product_category/base.html' %}
+{% load static %}
+
+<!-- this is where we list all the jeans in our database -->
+{% block content %}
+  <div class="product-page-container">
+    <div class="product-page-image">
+      <div class='inner-Image'>
+        <!-- <img src="/images/jeansFolder/jeans7.jpg" alt=""></div> -->
+        <img src="{{object.imageURL}}" alt=""></div>
+    </div>
+    <div class="price-addCart">
+      <div class="priceTag">
+        <p>Price: ${{ object.price }}</p> 
+      </div>
+      <div class="addCart">
+        <button data-product={{object.id}} data-doAction="add" class="add-to-cart-button">Add To Cart</button>
+      </div>
+    </div>
+    <div class="product-description">
+      {{ object.name }}
+    </div> 
+  </div>
+{% endblock content %}

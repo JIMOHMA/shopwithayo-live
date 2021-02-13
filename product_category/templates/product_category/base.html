@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>ShopWith Ayo</title>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Leckerli+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&family=Cinzel+Decorative:wght@700&family=Leckerli+One&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/mystylesheet.css' %}">
+
+    <script type="text/javascript">
+      var user = '{{request.user}}'
+
+      function getToken(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+      }
+      var csrftoken = getToken('csrftoken');
+
+      // get cookies so we can store information for a guest user
+      // Initially this gives null but "GoTo" below sets it accordingly
+      function getCookie(name) {
+		    // Split cookie string and get all individual name=value pairs in an array
+		    var cookieArr = document.cookie.split(";");
+
+		    // Loop through the array elements
+		    for(var i = 0; i < cookieArr.length; i++) {
+		        var cookiePair = cookieArr[i].split("=");
+
+		        /* Removing whitespace at the beginning of the cookie name
+		        and compare it with the given string */
+		        if(name == cookiePair[0].trim()) {
+		            // Decode the cookie value and return
+		            return decodeURIComponent(cookiePair[1]);
+		        }
+		    }
+
+		    // Return null if not found
+		    return null;
+		  }
+
+      // "GoTo"
+		  var cart = JSON.parse(getCookie('cart'))
+      if (cart == undefined){
+        cart = {}
+        console.log('Cart:= Created!', cart)
+        document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
+      }
+      console.log('Cart:', cart)
+    </script>
+
+  </head>
+  <body>
+    
+    <!-- LOGO AND NAVIGATION BAR ENDS HERE -->
+    <div class='my-body-wrapper'>
+      <!-- THIS IS MY LOGO AND NAVIGATION BAR -->
+    <section id=s1>
+      <div class='main-container'>
+        <div class=navigation-LOGO>
+          <div class=myLOGO>
+            <a href="{% url 'home' %}"><img id='imageID 'src="{% static 'images/LOGO.JPG' %}" alt=""></a>
+          </div>
+
+          <ul class='myNavbar'>
+            <li class='mynav-item'><a href="#">Login</a></li>
+            <!-- <li class='mynav-item'><a href="#">News</a></li> -->
+            <li class='mynav-item'><a href="#jump-to-store">Store</a></li>
+            <!-- <li class='nav'><a href="#">Cart</a></li> -->
+            <li class='mycart'><a href="{% url 'cart' %}"><img src="{% static 'images/cart.png' %}" alt=""><p id="total-in-Cart"> {{cartItems}}</p></a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Further Content goes in here -->
+    {% block content %}
+      <h3>BASE PAGE TEMPLATE</h3>
+    {% endblock content %}
+      
+    </div>
+    <!-- Footer -->
+    <div class="myfooter">
+      <div class="footer-content">
+        <div class="main-content">
+          <div class="left box">
+            <h2 style="color:  #d8a059;">About us</h2>
+            <div class="content">
+              <p style="color: #d8a059;">ShopWithAyo brings you the latest styles in clothing and fashion. Clothing items including jeans, shirts, sweats and coats can be found in our catalogue section. Check out our home page for exclusive sales items. Cheers.</p>
+              <div class="social">
+                <a href="https://facebook.com/coding.np"><span class="fab fa-facebook-f"></span></a>
+                <a href="#"><span class="fab fa-twitter"></span></a>
+                <a href="https://instagram.com/coding.np"><span class="fab fa-instagram"></span></a>
+                <a href="https://youtube.com/c/codingnepal"><span class="fab fa-youtube"></span></a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="center box">
+            <h2 style="color: #d8a059;">Address</h2>
+            <div class="content">
+              <div class="place">
+                <span class="fas fa-map-marker-alt"></span>
+                <span class="text">1 Foutainhead Road Toronto, Ontario, M3J 1K6.</span>
+              </div>
+              <div class="phone">
+                <span class="fas fa-phone-alt"></span>
+                <span class="text">+1-905-536-5547</span>
+              </div>
+              <div class="email">
+                <span class="fas fa-envelope"></span>
+                <span class="text">mail4ayodele@gmail.com</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="right box">
+            <h2 style="color: #d8a059;">Contact us</h2>
+            <div class="content">
+            <form action="#">
+              <div class="email">
+                <div class="text">Email *</div>
+                  <input type="email" required>
+                </div>
+              <div class="msg">
+                <div class="text">Message *</div>
+                <textarea style="resize: none;" cols="30" rows="4"></textarea>
+              </div>
+              <div class="btn">
+                <button type="submit">Send</button>
+              </div>
+            </form>
+            </div>
+          </div>
+        </div>
+			</div>
+
+      <div class="footer-bottom">
+        <!-- &copy; ShopWithAyo.com | Designed by Muyideen Jimoh -->
+        <center>
+				  <span class="credit">Created By <a href="https://muyideen.com" target="_blank">Muyideen Jimoh</a> | </span>
+				  <span class="far fa-copyright"></span><span> 2021 All rights reserved.</span>
+				</center>
+      </div>
+    </div>
+    <!-- Footer -->
+    <script type="text/javascript" src="{% static 'js/myscript.js' %}"></script>
+  </body>
+</html>

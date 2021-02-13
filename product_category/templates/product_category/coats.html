@@ -1,0 +1,22 @@
+{% extends 'product_category/base.html' %}
+{% load static %}
+
+<!-- this is where we list all the jeans in our database -->
+{% block content %}
+  <div class="product-category"> <p>Coats</p></div>
+  <div class="products-wrapper">
+    {% for coat in object %}
+      <div class="product-container">
+        <div class="Product-Image">
+          <!-- <img src="{{shirts.image.url}}" alt=""> -->
+          <a href="{{ coat.get_absolute_url }}"><img src="{{coat.imageURL}}" alt=""></a>
+        </div>
+        <p>{{ coat.name }}</p>
+        <div class="price-cart">
+          <span>Price: ${{ coat.price }}</span> 
+          <button data-product={{coat.id}} data-action="add" class="add-to-cart-button update-cart">Add To Cart</button>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock content %}
