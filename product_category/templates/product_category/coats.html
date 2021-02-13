@@ -9,7 +9,8 @@
       <div class="product-container">
         <div class="Product-Image">
           <!-- <img src="{{shirts.image.url}}" alt=""> -->
-          <a href="{{ coat.get_absolute_url }}"><img src="{{coat.imageURL}}" alt=""></a>
+          <!-- <a href="{{ coat.get_absolute_url }}"><img src="{{coat.imageURL}}" alt=""></a> -->
+          <a href="{{ coat.get_absolute_url }}"><img src="{% static coat.imageURL %}" alt=""></a>
         </div>
         <p>{{ coat.name }}</p>
         <div class="price-cart">
