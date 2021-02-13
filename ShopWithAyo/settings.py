@@ -41,7 +41,7 @@ INSTALLED_APPS = [
 
     # Own Apps
     'product_category.apps.ProductCategoryConfig',
-    # 'storages',
+    'storages',
 ]
 
 MIDDLEWARE = [
