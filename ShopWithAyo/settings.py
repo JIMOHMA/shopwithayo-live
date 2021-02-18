@@ -149,26 +149,26 @@ MEDIA_URL = '/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 
-# To remove query parameter authentication from generated URLs. 
-# This can be useful if your S3 buckets are public.
-AWS_QUERYSTRING_AUTH = False
-# Third-Party module to interac with our AMAZON S3 bucket
-# 'pip install boto3' in your vitual environment
-# Then 'pip install django-storages'
-# Add 'storages' to the installed apps
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+# # To remove query parameter authentication from generated URLs. 
+# # This can be useful if your S3 buckets are public.
+# AWS_QUERYSTRING_AUTH = False
+# # Third-Party module to interac with our AMAZON S3 bucket
+# # 'pip install boto3' in your vitual environment
+# # Then 'pip install django-storages'
+# # Add 'storages' to the installed apps
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 
-# These are values that must have been created for an 'IAM' user (Muyideen-shopwithayo) in AWS
-# Access Key ID
-AWS_ACCESS_KEY_ID = 'AKIAUUKWU5VP5FWLFU52'
-# Secret access key
-AWS_SECRET_ACCESS_KEY = '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'
-# Name of bucket gien on AWS
-AWS_STORAGE_BUCKET_NAME = 'shopwithayo'
+# # These are values that must have been created for an 'IAM' user (Muyideen-shopwithayo) in AWS
+# # Access Key ID
+# AWS_ACCESS_KEY_ID = 'AKIAUUKWU5VP5FWLFU52'
+# # Secret access key
+# AWS_SECRET_ACCESS_KEY = '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'
+# # Name of bucket gien on AWS
+# AWS_STORAGE_BUCKET_NAME = 'shopwithayo'
 
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = None
+# AWS_S3_FILE_OVERWRITE = False
+# AWS_DEFAULT_ACL = None
 
 
 
