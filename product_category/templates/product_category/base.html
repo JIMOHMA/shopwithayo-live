@@ -19,9 +19,13 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/mystylesheet.css' %}">
 
     <script type="text/javascript">
+
+      function messageOnClick() {
+        alert("Your contact form has been sent. Thank you!")
+      }
+
       var user = '{{request.user}}'
 
-      document.querySelector(".btn button").onclick = alert("Your contact form has been submitted. Thank you!")
       function getToken(name) {
         let cookieValue = null;
         if (document.cookie && document.cookie !== '') {
@@ -157,7 +161,7 @@
                   <textarea name="message" style="resize: none;" cols="30" rows="4"></textarea>
                 </div>
                 <div class="btn">
-                  <button type="submit">Send</button>
+                  <button onclick="messageOnClick()" type="submit">Send</button>
                 </div>
               </form>
             </div>
