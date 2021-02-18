@@ -1,6 +1,9 @@
 import json
 from . models import *
 
+from django.core.mail import send_mail
+from django.conf import settings
+
 def cookieCart(request):
   try:
     cart = json.loads(request.COOKIES['cart']) # turns our data from json into a python dictionary
@@ -92,3 +95,20 @@ def guestOrder(request, data):
       )
 
   return customer, order
+
+
+def sendFormMessage(request):
+    if request.method == 'POST':
+      message = request.POST['message']
+      sender_Email = request.POST['email']
+      sender_Name = request.POST['sender_name']
+
+      send_mail(
+        subject='Contact Form Message',
+        message="{}. Sender of this message is {} with an email of {}".format(message, sender_Name, sender_Email),
+        # from_email = sender_Email,
+        # recipient_list = [settings.EMAIL_HOST_USER],
+        from_email = 'ayodelemee@gmail.com',
+        recipient_list = ['mail4ayodele@gmail.com'],
+        fail_silently=False
+        )

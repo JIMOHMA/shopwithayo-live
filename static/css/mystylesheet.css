@@ -88,7 +88,7 @@ button {
   color: var(--mainText);
 }
 
-#s1 {
+.s1 {
   margin-left: auto;
   margin-right: auto;
   /* background-color: rgb(231, 231, 231); */
@@ -101,7 +101,7 @@ button {
   margin: auto;
 } */
 
-#s1 .navigation-LOGO {
+.s1 .navigation-LOGO {
   margin: auto;
   padding-top: 0;
   /* background-color: #f12020; */
@@ -124,16 +124,16 @@ button {
   /* -webkit-box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.76);
   -moz-box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.76);
   box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.76); */
-  margin-left: 10pxpx;
+  /* margin-left: 10px; */
   margin-top: 20px;
-  padding: 0;
+  /* padding: 0; */
   text-align: center;
   height: 100%;
 }
 
 #imageID {
-  width: 25px;
-  height: 100%;
+  width: 350px;
+  height: 70px;
 }
 
 .myNavbar {
@@ -256,6 +256,8 @@ button {
   padding-top: 60px;
   padding-left: 80px;
   padding-right: 80px;
+  padding-left: auto;
+  padding-right: auto;
   padding-bottom: 150px;
   margin: auto;
   display: flex;
@@ -299,6 +301,7 @@ button {
 /* ####################################################################
 #################################################################### */
 .myfooter {
+  margin-top: 100px;
   /* background: var(--footerColor); */
   /* margin: none; */
   background: #2f2c2f;
@@ -499,11 +502,11 @@ footer{
   margin: auto;
   padding: auto;
   margin-bottom: 50px;
-  margin-top: 50px;
+  margin-top: 150px;
 }
 
 .products-wrapper {
-  background-color: #f6f3f3;
+  /* background-color: #f6f3f3; */
   margin-left: 60px;
   margin-right: 60px;
   margin-bottom: 60px;
@@ -543,7 +546,7 @@ footer{
   border: 2px solid rgb(126, 129, 129);
 }
 
-/* PRODUCT PAGE */
+/* PRODUCT DETAILS PAGE */
 /* ##################################################################
 ################################################################## */
 .product-page-container {
@@ -633,10 +636,58 @@ footer{
   font-size: 30px;
   margin-top: 30px;
 }
-
 /* ##################################################################
 ################################################################## */
 /* PRODUCT PAGE END*/
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+.pp-product-page {
+  /* background-color: blue; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* min-height: 20vh; */
+}
+
+.pp-image {
+  /* background-color: red; */
+  margin-top: 100px;
+  margin-bottom: 15px;
+}
+
+.pp-product-name {
+  margin: 25px;
+}
+
+.pp-inner-Image img {
+  width: 320px;
+  height: 400px;
+}
+
+.pp-price-addCart {
+  display: inline-flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  gap: 70px;
+}
+
+.pp-add-to-cart-button {
+  float: right;
+  text-align: center;
+  color: #d8a059;
+  font-family: var(--mainFont);
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.pp-add-to-cart-button:hover {
+  background-color: rgb(5, 5, 5);
+  border: 2px solid rgb(126, 129, 129);
+}
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 
 /* STYLING FOR CART AND CHECKOUT PAGE */
 /* ##################################################################
@@ -876,7 +927,20 @@ footer{
 
 @media (max-width: 540px) {
   /* CSS */
+
+  .imageID {
+    width: 300px;
+    height: 60px;
+  }
+
+  .image-shop-now-container {
+    margin-left: 20px;
+  }
   .featured-Items {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-left: auto;
+    padding-right: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:

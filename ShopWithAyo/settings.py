@@ -25,8 +25,17 @@ SECRET_KEY = '57^f+2@516ky3oyn6+jzd*x&gx=mtkh*^om^9%&-p%5^_qzb3^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'mail4ayodele@gmail.com'
+EMAIL_HOST_PASSWORD = 'delegiwa24.'
+EMAIL_PORT = 587
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+
 # ALLOWED_HOSTS = ['DJANGO-ENV-2.eba-p4rmgsac.us-west-2.elasticbeanstalk.com']
 ALLOWED_HOSTS = ['shopwithayo-ecommerce.herokuapp.com', '127.0.0.1']
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -44,6 +53,7 @@ INSTALLED_APPS = [
 
     # Own Apps
     'product_category.apps.ProductCategoryConfig',
+    'accounts.apps.AccountsConfig',
     'storages',
 ]
 

@@ -81,18 +81,16 @@
     <!-- LOGO AND NAVIGATION BAR ENDS HERE -->
     <div class='my-body-wrapper'>
       <!-- THIS IS MY LOGO AND NAVIGATION BAR -->
-      <section id=s1>
+      <section class=s1>
         <div class="main-container">
           <div class=navigation-LOGO>
             <div class=myLOGO>
-              <a href="{% url 'home' %}"><img id='imageID 'src="{% static 'images/LOGO.JPG' %}" alt=""></a>
+              <a href="{% url 'home' %}"><img class='imageID 'src="{% static 'images/LOGO.JPG' %}" alt=""></a>
             </div>
   
             <ul class='myNavbar'>
-              <li class='mynav-item'><a href="#">Login</a></li>
-              <!-- <li class='mynav-item'><a href="#">News</a></li> -->
-              <li class='mynav-item'><a href="#">Store</a></li>
-              <!-- <li class='nav'><a href="#">Cart</a></li> -->
+              <li class='mynav-item'><span>Hello, {{request.user}}</span></li>
+              <li class='mynav-item'> <span><a href="{% url 'accounts:logout' %}">Logout</a></span> </li>
               <li class='mycart'><a href="{% url 'cart' %}"><img src="{% static 'images/cart.png' %}" alt=""><p id="total-in-Cart"> {{cartItems}}</p></a></li>
               
             </ul>
@@ -143,19 +141,24 @@
           <div class="right box">
             <h2 style="color: #d8a059;">Contact us</h2>
             <div class="content">
-            <form action="#">
-              <div class="email">
-                <div class="text">Email *</div>
-                  <input type="email" required>
+              <form name="contact-me" method="POST">
+                {% csrf_token %}
+                <div class="form-name">
+                  <div class="text">Full Name *</div>
+                    <input name="sender_name" required>
                 </div>
-              <div class="msg">
-                <div class="text">Message *</div>
-                <textarea  cols="30" rows="4"></textarea>
-              </div>
-              <div class="btn">
-                <button style="width: 100%;" type="submit">Send</button>
-              </div>
-            </form>
+                <div class="email">
+                  <div class="text">Email *</div>
+                    <input name="email" type="email" required>
+                </div>
+                <div class="msg">
+                  <div class="text">Message *</div>
+                  <textarea name="message" style="resize: none;" cols="30" rows="4"></textarea>
+                </div>
+                <div class="btn">
+                  <button type="submit">Send</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -171,6 +174,7 @@
     </div>
     <!-- Footer -->
 
+
     <!-- Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 
@@ -178,6 +182,14 @@
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
+    <script>
+      if (user === 'AnonymousUser') {
+        // console.log('Not logged in')
+        // document.getElementsByClassName('mynav-item').innerHTML = ''
+        $("li.mynav-item").find("span").html("")
+        console.log("Is this working? and updated", user)
+      }
+    </script>
     <!-- JavaScript -->
     <script type="text/javascript" src="{% static 'js/myscript.js' %}"></script>
   </body>

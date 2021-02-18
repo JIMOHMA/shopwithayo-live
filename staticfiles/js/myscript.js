@@ -1,7 +1,4 @@
-// function ShirtHover {
-
-// }
-
+// also don't display any greetings
 function hvr(dom, action)
 {
     if (action == 'in')
@@ -90,4 +87,3 @@ function updateUserOrder(productID, action){
         location.reload() // to reload our page automatically everytime items gets added to our cart.
     })
 }
-

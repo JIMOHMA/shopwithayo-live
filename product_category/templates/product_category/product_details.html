@@ -3,23 +3,27 @@
 
 <!-- this is where we list all the jeans in our database -->
 {% block content %}
-  <div class="product-page-container">
-    <div class="product-page-image">
-      <div class='inner-Image'>
+  <div class="pp-product-page">
+    <div class="pp-image">
+      <div class="pp-product-name">
+        <p>{{ object.name }}</p>
+      </div>
+      <div class='pp-inner-Image'>
         <!-- <img src="/images/jeansFolder/jeans7.jpg" alt=""></div> -->
         <!-- <img src="{{object.imageURL}}" alt=""></div> -->
-        <img src="{% static object.imageURL %}" alt=""></div>
+        <img src="{% static object.imageURL %}" alt="">
+      </div>
     </div>
-    <div class="price-addCart">
-      <div class="priceTag">
+    <div class="pp-price-addCart">
+      <div class="pp-priceTag">
         <p>Price: ${{ object.price }}</p> 
       </div>
-      <div class="addCart">
-        <button data-product={{object.id}} data-doAction="add" class="add-to-cart-button">Add To Cart</button>
+      <div class="pp-addCart">
+        <button data-product={{object.id}} data-action="add" class="update-cart pp-add-to-cart-button">Add To Cart</button>
       </div>
     </div>
-    <div class="product-description">
-      {{ object.name }}
+    <div class="pp-product-description">
+      <p>Description: {{ object.name }}</p>
     </div> 
   </div>
 {% endblock content %}

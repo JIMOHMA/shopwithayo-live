@@ -27,7 +27,7 @@ class Product(models.Model):
   def __str__(self):
     return str(self.name)
 
-  #@property decorator allows us to access the url as a attribute instead of a method
+  #@property decorator allows us to access the url as an attribute instead of a method
   @property
   def imageURL(self):
     try:
