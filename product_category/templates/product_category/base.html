@@ -21,6 +21,7 @@
     <script type="text/javascript">
       var user = '{{request.user}}'
 
+      document.querySelector(".btn button").onclick = alert("Your contact form has been submitted. Thank you!")
       function getToken(name) {
         let cookieValue = null;
         if (document.cookie && document.cookie !== '') {

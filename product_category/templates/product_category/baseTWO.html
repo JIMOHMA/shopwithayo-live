@@ -24,6 +24,11 @@
     </script>
 
     <script type="text/javascript">
+
+      function messageOnClick() {
+        alert("Your contact form has been sent. Thank you!")
+      }
+
       var user = '{{request.user}}'
 
       function getToken(name) {
@@ -156,7 +161,7 @@
                   <textarea name="message" style="resize: none;" cols="30" rows="4"></textarea>
                 </div>
                 <div class="btn">
-                  <button type="submit">Send</button>
+                  <button onclick="messageOnClick()" type="submit">Send</button>
                 </div>
               </form>
             </div>
