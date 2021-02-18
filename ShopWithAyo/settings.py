@@ -138,7 +138,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-# STATIC_URL = '/static/' 
+STATIC_URL = '/static/' 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
@@ -172,14 +172,14 @@ AWS_DEFAULT_ACL = None
 
 
 # STATIC URL changes from '/static' to the one below when application is in production
-AWS_LOCATION = 'static/images/'
-AWS_S3_URL_PROTOCOL = 'https:'
-AWS_S3_CUSTOM_DOMAIN = '{}.s3.amazonaws.com'.format(AWS_STORAGE_BUCKET_NAME)
+# AWS_LOCATION = 'static/images/'
+# AWS_S3_URL_PROTOCOL = 'https:'
+# AWS_S3_CUSTOM_DOMAIN = '{}.s3.amazonaws.com'.format(AWS_STORAGE_BUCKET_NAME)
 
-STATIC_URL = '{AWS_S3_URL_PROTOCOL}//{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}'.format(
-    AWS_S3_URL_PROTOCOL=AWS_S3_URL_PROTOCOL,
-    AWS_S3_CUSTOM_DOMAIN=AWS_S3_CUSTOM_DOMAIN,
-    AWS_LOCATION=AWS_LOCATION)
+# STATIC_URL = '{AWS_S3_URL_PROTOCOL}//{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}'.format(
+#     AWS_S3_URL_PROTOCOL=AWS_S3_URL_PROTOCOL,
+#     AWS_S3_CUSTOM_DOMAIN=AWS_S3_CUSTOM_DOMAIN,
+#     AWS_LOCATION=AWS_LOCATION)
 
 # AWS ELASTIC BEANSTALK ACCESS KEY ID = 'AKIAUUKWU5VPR6O634NP'
 # AWS ELASTIC BEAMSTALK SECRET KEY = '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'
