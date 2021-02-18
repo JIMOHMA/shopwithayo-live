@@ -64,9 +64,9 @@ p {
 }
 
 a {
-  text-decoration: none;
-  font-family: "Roboto Mono", monospace;
-  color: var(--secondaryText);
+  text-decoration: none !important;
+  font-family: "Roboto Mono", monospace !important;
+  color: var(--secondaryText) !important;
 }
 /* 
 a:hover {
@@ -461,6 +461,7 @@ footer{
 }
 .right form .btn {
   margin-top: 10px;
+  width: 100% !important;
 }
 .right form .btn button {
   height: 40px;
@@ -693,11 +694,11 @@ footer{
 /* ##################################################################
 ################################################################## */
 /* body{
-	background-color: hsl(0, 0%, 98%);
+  background-color: hsl(0, 0%, 98%);
 } */
 
 /* h1,h2,h3,h4,h5,h6{
-	color:hsl(0, 0%, 30%);
+  color:hsl(0, 0%, 30%);
 } */
 
 .container {
