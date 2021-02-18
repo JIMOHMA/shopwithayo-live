@@ -171,7 +171,7 @@ AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 
 
-STATIC URL changes from '/static' to the one below when application is in production
+# STATIC URL changes from '/static' to the one below when application is in production
 AWS_LOCATION = 'static/images/'
 AWS_S3_URL_PROTOCOL = 'https:'
 AWS_S3_CUSTOM_DOMAIN = '{}.s3.amazonaws.com'.format(AWS_STORAGE_BUCKET_NAME)
