@@ -88,11 +88,11 @@
             </div>
 
             <ul class='myNavbar'>
-              <li class='mynav-item'><span>Hello, {{request.user}}</span></li>
+              <li class='mynav-item my-user'><span>Hello, {{request.user}}</span></li>
               <!-- <li class='mynav-item'><a href="#">News</a></li> -->
 
               <!-- <li class='mynav-item'><a href="#jump-to-store">Store</a></li> -->
-              <li class='mynav-item'> <span><a href="{% url 'accounts:logout' %}">Logout</a></span> </li>
+              <li class='mynav-item my-logout'> <span><a href="{% url 'accounts:logout' %}">Logout</a></span> </li>
 
               <!-- <li class='nav'><a href="#">Cart</a></li> -->
               <li class='mycart'><a href="{% url 'cart' %}"><img src="{% static 'images/cart.png' %}" alt=""><p id="total-in-Cart"> {{cartItems}}</p></a></li>
@@ -182,7 +182,10 @@
       if (user === 'AnonymousUser') {
         // console.log('Not logged in')
         // document.getElementsByClassName('mynav-item').innerHTML = ''
-        $("li.mynav-item").find("span").html("")
+        $("li.my-user").find("span").html("");
+        // var loginlink = "{% url 'accounts:login' %}"
+        // Change the logout name to login
+        $("li.my-logout").find("a").text("Login");
         console.log("Is this working? and updated", user)
       }
     </script>

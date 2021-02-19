@@ -19,7 +19,7 @@ def basePage(request):
   return render(request, 'product_category/base.html', context)
 
 # Homepage view
-@login_required(login_url='accounts:login')
+# @login_required(login_url='accounts:login')
 def homePage(request):
   sendFormMessage(request)
   # if request.method == 'POST':
@@ -44,7 +44,7 @@ def homePage(request):
   return render(request, 'product_category/home.html', context)
 
 # Jeans view
-@login_required(login_url='accounts:login')
+# @login_required(login_url='accounts:login')
 def jeansPage(request):
   obj = Product.objects.filter(category='jeans')
 
@@ -57,7 +57,7 @@ def jeansPage(request):
   return render(request, 'product_category/jeans.html', context)
 
 # Shirts view
-@login_required(login_url='accounts:login')
+# @login_required(login_url='accounts:login')
 def shirtsPage(request):
   obj = Product.objects.filter(category='shirts')
 
@@ -70,7 +70,7 @@ def shirtsPage(request):
   return render(request, 'product_category/shirts.html', context)
 
 # Sweats views
-@login_required(login_url='accounts:login')
+# @login_required(login_url='accounts:login')
 def sweatsPage(request):
   queryset = Product.objects.filter(category='sweats')
 
@@ -83,7 +83,7 @@ def sweatsPage(request):
   return render(request, 'product_category/sweats.html', context)
 
 # Coats view
-@login_required(login_url='accounts:login')
+# @login_required(login_url='accounts:login')
 def coatsPage(request):
   obj = Product.objects.filter(category='coats')
 
@@ -96,7 +96,7 @@ def coatsPage(request):
   return render(request, 'product_category/coats.html', context)
 
 # Productdetail view
-@login_required(login_url='accounts:login')
+# @login_required(login_url='accounts:login')
 def product_details(request, id):
   obj = Product.objects.get(id=id)
 
@@ -109,7 +109,7 @@ def product_details(request, id):
   return render(request, 'product_category/product_details.html', context)
 
 # Cartpage view
-@login_required(login_url='accounts:login')
+# @login_required(login_url='accounts:login')
 def cartPage(request):
   data = cartData(request)
   items = data['items']
@@ -122,7 +122,7 @@ def cartPage(request):
   return render(request, 'product_category/cart.html', context)
 
 # Checkoutpage view
-@login_required(login_url='accounts:login')
+# @login_required(login_url='accounts:login')
 def checkoutPage(request):
   data = cartData(request)
   items = data['items']
